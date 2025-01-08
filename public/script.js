@@ -1,7 +1,7 @@
 const FEEDBACK_FORM = document.querySelector("#feedback-form");
 
 function sendFeedback(feedback) {
-  fetch("https://vos-deni0006s-projects.vercel.app/api/feedback", {
+  fetch("/api/feedback", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
