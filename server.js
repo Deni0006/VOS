@@ -6,7 +6,7 @@ const server = express();
 server.use(express.static(__dirname + '/public'));
 server.use(express.json());
 
-server.get("/", (req, res) => {
+server.get("*", (req, res) => {
     res.sendFile("public/index.html", { root: __dirname });
   });
 
