@@ -10,7 +10,7 @@ server.get("*", (req, res) => {
     res.sendFile("public/index.html", { root: __dirname });
   });
 
-  server.post("/api/feedback", async (req, res) => {
+  server.post("https://vos-deni0006s-projects.vercel.app/api/feedback", async (req, res) => {
     try {
       const transporter = nodemailer.createTransport({
         host: "smtp.mail.ru",
@@ -43,4 +43,8 @@ server.get("*", (req, res) => {
         .status(500)
         .send({ status: 500, message: "Internal server error" });
     }
+  });
+  
+server.listen(443, () => {
+    console.log(`App listening on port 3000:`);
   });
