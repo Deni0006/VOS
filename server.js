@@ -44,3 +44,7 @@ server.get("*", (req, res) => {
         .send({ status: 500, message: "Internal server error" });
     }
   });
+  
+server.listen(443, () => {
+    console.log(`App listening on port 3000:`);
+  });
