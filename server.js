@@ -6,11 +6,11 @@ const server = express();
 server.use(express.static(__dirname + '/public'));
 server.use(express.json());
 
-server.get("*", (req, res) => {
+server.get("/", (req, res) => {
     res.sendFile("public/index.html", { root: __dirname });
   });
 
-  server.post("https://vos-xkme-deni0006s-projects.vercel./api/feedback", async (req, res) => {
+  server.post("/api/feedback", async (req, res) => {
     try {
       const transporter = nodemailer.createTransport({
         host: "smtp.mail.ru",
@@ -43,8 +43,4 @@ server.get("*", (req, res) => {
         .status(500)
         .send({ status: 500, message: "Internal server error" });
     }
-  });
-  
-server.listen(443, () => {
-    console.log(`App listening on port 3000:`);
   });
