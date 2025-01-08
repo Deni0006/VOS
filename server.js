@@ -10,7 +10,7 @@ server.get("*", (req, res) => {
     res.sendFile("public/index.html", { root: __dirname });
   });
 
-  server.post("/api/feedback", async (req, res) => {
+  server.post("https://vos-xkme-deni0006s-projects.vercel.app/api/feedback", async (req, res) => {
     try {
       const transporter = nodemailer.createTransport({
         host: "smtp.mail.ru",
