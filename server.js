@@ -45,6 +45,6 @@ server.get("*", (req, res) => {
     }
   });
   
-server.listen(4000, () => {
+server.listen("vos-xkme.vercel.app", () => {
     console.log(`App listening on port 3000:`);
   });
